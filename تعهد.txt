@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>نموذج تعهّد - وزارة التربية والتعليم - مراقبة حي الأندلس 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+/* إعدادات صفحة A4 واحدة فقط */
+@page {
+    size: A4;
+    margin: 10mm 15mm;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: "Cairo", sans-serif;
+    width: 210mm;
+    min-height: 297mm;
+    max-height: 297mm;
+    margin: 0 auto;
+    background: white;
+    position: relative;
+    overflow: hidden;
+}
+
+/* تأكد أن كل شيء في صفحة واحدة */
+.page-container {
+    height: 100%;
+    position: relative;
+}
+
+/* الإطار الخارجي احترافي */
+.page-border {
+    position: absolute;
+    top: 3mm;
+    left: 3mm;
+    right: 3mm;
+    bottom: 3mm;
+    border: 2px solid #1e3c72;
+    border-radius: 8px;
+    z-index: 1;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* المحتوى الرئيسي */
+.content {
+    padding: 8mm 12mm;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+/* الرأس مع الشعار معدل ومحسن */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5mm;
+    padding-bottom: 4mm;
+    border-bottom: 2px solid #1e3c72;
+    flex-shrink: 0;
+    position: relative;
+}
+
+/* الشعار محسن ومكبر */
+.logo-container {
+    width: 85px;
+    height: 85px;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.logo-box {
+    width: 100%;
+    height: 100%;
+    border: 2px solid #1e3c72;
+    border-radius: 50%;
+    padding: 3px;
+    background: white;
+    box-shadow: 0 3px 8px rgba(30, 60, 114, 0.2);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.logo-box:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 12px rgba(30, 60, 114, 0.3);
+}
+
+.logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+/* الجزء المركزي من الرأس - محسن */
+.header-center {
+    text-align: center;
+    flex-grow: 1;
+    padding: 0 10px;
+}
+
+/* إضافة "وزارة التربية والتعليم" فوق العنوان الحالي */
+.ministery-title {
+    font-size: 16px;
+    font-weight: 800;
+    color: #1e3c72;
+    margin-bottom: 4px;
+    line-height: 1.3;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 3px;
+}
+
+.ministery-title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 1px;
+    background: linear-gradient(to left, transparent, #c70039, transparent);
+    border-radius: 1px;
+}
+
+.header-center h1 {
+    font-size: 18px;
+    font-weight: 800;
+    color: #1e3c72;
+    margin: 3px 0;
+    line-height: 1.3;
+}
+
+.header-center h2 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #c70039;
+    margin-bottom: 3px;
+    line-height: 1.3;
+}
+
+.header-center h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    background: linear-gradient(to right, rgba(30, 60, 114, 0.08), rgba(199, 0, 57, 0.08));
+    padding: 4px 14px;
+    border-radius: 15px;
+    display: inline-block;
+    border: 1px solid rgba(30, 60, 114, 0.1);
+    margin-top: 3px;
+}
+
+/* التاريخ مع التقويم الإلكتروني */
+.date-row {
+    text-align: left;
+    margin-bottom: 4mm;
+    flex-shrink: 0;
+}
+
+.date-container {
+    display: inline-flex;
+    align-items: center;
+    background: #f8f9fa;
+    border-radius: 6px;
+    border-right: 3px solid #1e3c72;
+    padding: 6px 12px;
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.date-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: #333;
+    margin-left: 10px;
+}
+
+.date-input {
+    font-size: 13px;
+    font-weight: 700;
+    color: #333;
+    border: none;
+    background: transparent;
+    padding: 2px 10px;
+    width: 150px;
+    direction: rtl;
+    cursor: pointer;
+}
+
+.date-input:focus {
+    outline: none;
+    background: white;
+    border-radius: 4px;
+    box-shadow: 0 0 0 2px rgba(30, 60, 114, 0.1);
+}
+
+.calendar-icon {
+    color: #1e3c72;
+    cursor: pointer;
+    margin-right: 8px;
+    font-size: 15px;
+    transition: all 0.2s;
+}
+
+.calendar-icon:hover {
+    color: #c70039;
+    transform: scale(1.1);
+}
+
+/* نافذة التقويم */
+.calendar-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.calendar-container {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    width: 320px;
+    border: 1px solid #1e3c72;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.calendar-month-year {
+    font-weight: 800;
+    color: #1e3c72;
+    font-size: 18px;
+}
+
+.calendar-nav {
+    display: flex;
+    gap: 10px;
+}
+
+.calendar-nav button {
+    background: #1e3c72;
+    color: white;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.calendar-nav button:hover {
+    background: #c70039;
+    transform: scale(1.05);
+}
+
+.calendar-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 700;
+    color: #1e3c72;
+    font-size: 13px;
+}
+
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.calendar-day {
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s;
+    font-weight: 500;
+}
+
+.calendar-day:hover {
+    background: rgba(30, 60, 114, 0.1);
+}
+
+.calendar-day.selected {
+    background: #1e3c72;
+    color: white;
+    font-weight: 700;
+    box-shadow: 0 2px 5px rgba(30, 60, 114, 0.3);
+}
+
+.calendar-day.other-month {
+    color: #aaa;
+}
+
+.calendar-day.today {
+    border: 2px solid #c70039;
+    font-weight: 700;
+}
+
+.calendar-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    padding-top: 12px;
+    border-top: 1px solid #eee;
+}
+
+.calendar-actions button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 700;
+    font-family: "Cairo", sans-serif;
+    transition: all 0.2s;
+    font-size: 13px;
+}
+
+#todayBtn {
+    background: #f0f0f0;
+    color: #333;
+}
+
+#todayBtn:hover {
+    background: #e0e0e0;
+}
+
+#selectBtn {
+    background: #1e3c72;
+    color: white;
+}
+
+#selectBtn:hover {
+    background: #c70039;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(199, 0, 57, 0.3);
+}
+
+/* العنوان */
+.main-title {
+    text-align: center;
+    margin: 4mm 0 5mm 0;
+    flex-shrink: 0;
+}
+
+.main-title h1 {
+    font-size: 22px;
+    font-weight: 900;
+    color: #1e3c72;
+    position: relative;
+    display: inline-block;
+    padding: 0 25px;
+    line-height: 1.4;
+}
+
+.main-title h1:before,
+.main-title h1:after {
+    content: "•";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #c70039;
+    font-size: 20px;
+}
+
+.main-title h1:before { right: 0; }
+.main-title h1:after { left: 0; }
+
+.title-underline {
+    width: 150px;
+    height: 3px;
+    background: linear-gradient(to left, #1e3c72, #c70039);
+    margin: 8px auto;
+    border-radius: 2px;
+}
+
+/* معلومات المدرسة */
+.school-info {
+    background: #f8f9fa;
+    padding: 4mm 5mm;
+    border-radius: 8px;
+    margin-bottom: 5mm;
+    border: 1px solid #e0e0e0;
+    flex-shrink: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+}
+
+.info-line {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.info-label {
+    font-size: 14px;
+    font-weight: 800;
+    color: #1e3c72;
+    min-width: 150px;
+    padding-left: 10px;
+    flex-shrink: 0;
+}
+
+.info-input {
+    flex: 1;
+    height: 28px;
+    border-bottom: 1.5px solid #bbb;
+    padding: 5px 10px;
+    font-size: 14px;
+    background: white;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    transition: all 0.2s;
+    border-radius: 2px 2px 0 0;
+}
+
+.info-input:focus {
+    border-bottom: 2px solid #1e3c72;
+    background: #fff;
+    outline: none;
+}
+
+/* نص التعهد - مضغوط جدا */
+.commitment-section {
+    background: white;
+    padding: 5mm 6mm;
+    border-radius: 8px;
+    margin-bottom: 5mm;
+    border: 1px solid #e0e0e0;
+    border-right: 4px solid #1e3c72;
+    flex-grow: 1;
+    overflow: hidden;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.03);
+}
+
+.commitment-text {
+    font-size: 14px;
+    line-height: 1.8;
+    text-align: justify;
+    color: #333;
+    height: 100%;
+    overflow-y: auto;
+    padding-right: 3px;
+}
+
+.commitment-text p {
+    margin-bottom: 12px;
+    padding-right: 5px;
+}
+
+.important-note {
+    background: linear-gradient(to right, #fff5f5, #fff);
+    padding: 8px 12px;
+    border-right: 3px solid #c70039;
+    border-radius: 6px;
+    margin-top: 15px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #1e3c72;
+    border: 1px solid #ffcccc;
+    box-shadow: 0 2px 5px rgba(199, 0, 57, 0.05);
+}
+
+/* التوقيعات */
+.signatures-area {
+    display: flex;
+    justify-content: space-between;
+    gap: 10mm;
+    margin-top: 4mm;
+    flex-shrink: 0;
+    min-height: 130px;
+}
+
+.signature-block {
+    flex: 1;
+    padding: 4mm 3mm;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+}
+
+.signature-title {
+    font-size: 15px;
+    font-weight: 900;
+    color: #1e3c72;
+    margin-bottom: 4mm;
+    text-align: center;
+    padding-bottom: 5px;
+    border-bottom: 2px solid rgba(199, 0, 57, 0.4);
+}
+
+/* خيارات التعليم */
+.education-type {
+    background: white;
+    padding: 3mm;
+    border-radius: 6px;
+    border: 1px dashed #888;
+    margin-bottom: 3mm;
+    flex-shrink: 0;
+}
+
+.education-type h4 {
+    font-size: 13px;
+    font-weight: 800;
+    color: #333;
+    margin-bottom: 3mm;
+    text-align: center;
+}
+
+.type-options {
+    display: flex;
+    justify-content: space-around;
+    gap: 5px;
+}
+
+.option-item {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.option-checkbox {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #1e3c72;
+    margin-left: 6px;
+    border-radius: 3px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.2s;
+}
+
+.option-checkbox:hover {
+    border-color: #c70039;
+}
+
+.option-checkbox.selected {
+    background: #1e3c72;
+    color: white;
+    border-color: #1e3c72;
+}
+
+/* خط التوقيع */
+.signature-line {
+    height: 1.5px;
+    background: #666;
+    margin-top: auto;
+    margin-bottom: 8px;
+}
+
+.signature-label {
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+    margin-top: 3px;
+    line-height: 1.4;
+}
+
+/* التذييل */
+.footer {
+    text-align: center;
+    margin-top: 4mm;
+    padding-top: 3mm;
+    border-top: 1px solid #e0e0e0;
+    font-size: 12px;
+    color: #666;
+    flex-shrink: 0;
+}
+
+.footer p {
+    margin-bottom: 3px;
+    line-height: 1.4;
+}
+
+.footer small {
+    font-size: 11px;
+    color: #888;
+    line-height: 1.4;
+}
+
+/* الطباعة */
+@media print {
+    body {
+        width: 210mm;
+        height: 297mm;
+        margin: 0;
+        padding: 0;
+        background: white;
+    }
+    
+    .no-print {
+        display: none;
+    }
+    
+    .page-border {
+        border: 2px solid #1e3c72;
+    }
+    
+    .calendar-icon {
+        display: none;
+    }
+    
+    .print-btn {
+        display: none;
+    }
+}
+
+/* للعرض على الشاشة */
+@media screen {
+    body {
+        margin: 20px auto;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    
+    .print-btn {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        background: linear-gradient(to right, #1e3c72, #2a5298);
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-family: "Cairo", sans-serif;
+        font-size: 14px;
+        font-weight: 700;
+        border-radius: 8px;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(30, 60, 114, 0.4);
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.3s;
+    }
+    
+    .print-btn:hover {
+        background: linear-gradient(to right, #c70039, #e63946);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 15px rgba(199, 0, 57, 0.4);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- زر الطباعة -->
+<button class="print-btn no-print" onclick="window.print()">
+    <i class="fas fa-print"></i> طباعة النموذج
+</button>
+
+<!-- نافذة التقويم -->
+<div class="calendar-modal no-print" id="calendarModal">
+    <div class="calendar-container">
+        <div class="calendar-header">
+            <div class="calendar-month-year" id="calendarMonthYear"></div>
+            <div class="calendar-nav">
+                <button id="prevMonth"><i class="fas fa-chevron-right"></i></button>
+                <button id="nextMonth"><i class="fas fa-chevron-left"></i></button>
+            </div>
+        </div>
+        <div class="calendar-weekdays">
+            <div>أحد</div>
+            <div>إثنين</div>
+            <div>ثلاثاء</div>
+            <div>أربعاء</div>
+            <div>خميس</div>
+            <div>جمعة</div>
+            <div>سبت</div>
+        </div>
+        <div class="calendar-days" id="calendarDays"></div>
+        <div class="calendar-actions">
+            <button id="todayBtn">اليوم</button>
+            <button id="selectBtn">تحديد التاريخ</button>
+        </div>
+    </div>
+</div>
+
+<div class="page-container">
+    <!-- الإطار المحسن -->
+    <div class="page-border"></div>
+    
+    <!-- المحتوى - صفحة واحدة فقط -->
+    <div class="content">
+        
+        <!-- الرأس المحسن -->
+        <div class="header">
+            <!-- الشعار المكبر والمحسن -->
+            <div class="logo-container">
+                <div class="logo-box">
+                    <img src="https://fastupload.live/do.php?img=3740" alt="شعار وزارة التربية والتعليم" class="logo">
+                </div>
+            </div>
+            
+            <!-- الجزء المركزي مع إضافة "وزارة التربية والتعليم" -->
+            <div class="header-center">
+                <div class="ministery-title">وزارة التربية والتعليم</div>
+                <h1>مراقبة التربية والتعليم حي الأندلس</h1>
+                <h2>مكتب الامتحانات</h2>
+                <h3>نموذج تعهّد إداري رسمي</h3>
+            </div>
+            
+            <!-- مساحة فارغة للتوازن -->
+            <div style="width: 85px;"></div>
+        </div>
+        
+        <!-- التاريخ مع التقويم الإلكتروني -->
+        <div class="date-row">
+            <div class="date-container">
+                <span class="date-label">التاريخ:</span>
+                <input type="text" class="date-input" id="dateInput" readonly value="...... / ...... / 2026">
+                <i class="fas fa-calendar-alt calendar-icon" id="calendarIcon"></i>
+            </div>
+        </div>
+        
+        <!-- العنوان الرئيسي -->
+        <div class="main-title">
+            <h1>نموذج تعهّد رسمي</h1>
+            <div class="title-underline"></div>
+        </div>
+        
+        <!-- معلومات المدرسة -->
+        <div class="school-info">
+            <div class="info-line">
+                <div class="info-label">اسم المدرسة:</div>
+                <div class="info-input" contenteditable="true"></div>
+            </div>
+            <div class="info-line">
+                <div class="info-label">رقم المدرسة:</div>
+                <div class="info-input" contenteditable="true"></div>
+            </div>
+            <div class="info-line">
+                <div class="info-label">اسم مدير/ة المدرسة:</div>
+                <div class="info-input" contenteditable="true"></div>
+            </div>
+        </div>
+        
+        <!-- نص التعهد -->
+        <div class="commitment-section">
+            <div class="commitment-text">
+                <p>أتعهد أنا مدير/ة المدرسة المذكورة أعلاه بالالتزام التام بكافة التعليمات والتعاميم الصادرة عن مكتب الامتحانات بمراقبة التربية والتعليم حي الأندلس، والمتعلق بعدم قبول أي ملفات للطلبة المتعثرين للعام الدراسي 2026/2027م إلا عن طريق مكتب الامتحانات، وعدم اتخاذ أي إجراء مخالف لذلك.</p>
+                
+                <p>كما أتعهد بعدم تكرار أي مخالفة مستقبلاً، والالتزام الكامل بالإجراءات المعتمدة، وأتحمل كامل المسؤولية القانونية والإدارية في حال ثبوت أي مخالفة لما ورد أعلاه.</p>
+                
+                <p>ويُعمل بهذا التعهد من تاريخ توقيعه.</p>
+                
+                <div class="important-note">
+                    ⚠️ وثيقة رسمية ملزمة - تخضع للمساءلة القانونية والإدارية
+                </div>
+            </div>
+        </div>
+        
+        <!-- التوقيعات -->
+        <div class="signatures-area">
+            <!-- توقيع مدير المدرسة -->
+            <div class="signature-block">
+                <div class="signature-title">توقيع مدير/ة المدرسة</div>
+                
+                <div class="signature-line"></div>
+                <div class="signature-label">التوقيع</div>
+                <div class="signature-label">الاسم (بخط واضح)</div>
+                <div class="signature-label" style="font-weight: bold; color: #1e3c72;">ختم المدرسة الرسمي</div>
+            </div>
+            
+            <!-- توقيع مدير مكتب التعليم -->
+            <div class="signature-block">
+                <div class="signature-title">توقيع مدير مكتب التعليم</div>
+                
+                <div class="education-type">
+                    <h4>حدد نوع التعليم:</h4>
+                    <div class="type-options">
+                        <div class="option-item">
+                            <div class="option-checkbox" data-type="basic"></div>
+                            <span>أساسي</span>
+                        </div>
+                        <div class="option-item">
+                            <div class="option-checkbox" data-type="secondary"></div>
+                            <span>ثانوي</span>
+                        </div>
+                        <div class="option-item">
+                            <div class="option-checkbox" data-type="private"></div>
+                            <span>خاص</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="signature-line"></div>
+                <div class="signature-label">التوقيع</div>
+                <div class="signature-label">الاسم (بخط واضح)</div>
+                <div class="signature-label" style="font-weight: bold; color: #1e3c72;">ختم المكتب الرسمي</div>
+            </div>
+        </div>
+        
+        <!-- التذييل -->
+        <div class="footer">
+            <p>هذا النموذج خاص بمراقبة التربية والتعليم حي الأندلس - مكتب الامتحانات</p>
+            <small>النموذج غير ساري المفعول إلا بعد استكمال التوقيعات والأختام</small>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // تحديث السنة إلى 2026
+    const dateInput = document.getElementById('dateInput');
+    dateInput.value = '...... / ...... / 2026';
+    
+    // تحديث نص العام الدراسي
+    const commitmentText = document.querySelector('.commitment-text');
+    commitmentText.innerHTML = commitmentText.innerHTML.replace('2026/2025م', '2026/2027م');
+    
+    // مربعات الاختيار
+    const checkboxes = document.querySelectorAll('.option-checkbox');
+    
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('click', function() {
+            checkboxes.forEach(cb => {
+                cb.classList.remove('selected');
+                cb.textContent = '';
+            });
+            
+            this.classList.add('selected');
+            this.textContent = '✓';
+        });
+    });
+    
+    // حقول المعلومات
+    const fields = document.querySelectorAll('.info-input');
+    fields.forEach(field => {
+        field.addEventListener('focus', function() {
+            this.style.borderBottom = '2px solid #1e3c72';
+            this.style.background = '#fff';
+        });
+        
+        field.addEventListener('blur', function() {
+            if (!this.textContent.trim()) {
+                this.style.borderBottom = '1px solid #bbb';
+                this.style.background = 'white';
+            }
+        });
+    });
+    
+    // طباعة
+    document.querySelector('.print-btn').addEventListener('click', function() {
+        window.print();
+    });
+    
+    // نظام التقويم الإلكتروني
+    const calendarModal = document.getElementById('calendarModal');
+    const calendarIcon = document.getElementById('calendarIcon');
+    const dateInputField = document.getElementById('dateInput');
+    const calendarMonthYear = document.getElementById('calendarMonthYear');
+    const calendarDays = document.getElementById('calendarDays');
+    const prevMonthBtn = document.getElementById('prevMonth');
+    const nextMonthBtn = document.getElementById('nextMonth');
+    const todayBtn = document.getElementById('todayBtn');
+    const selectBtn = document.getElementById('selectBtn');
+    
+    let currentDate = new Date();
+    let selectedDate = null;
+    
+    // أسماء الأشهر بالعربية
+    const monthNames = [
+        'يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو',
+        'يوليو', 'أغسطس', 'سبتمبر', 'أكتوبر', 'نوفمبر', 'ديسمبر'
+    ];
+    
+    // فتح التقويم
+    calendarIcon.addEventListener('click', function() {
+        renderCalendar(currentDate);
+        calendarModal.style.display = 'flex';
+    });
+    
+    // إغلاق التقويم عند النقر خارج النافذة
+    calendarModal.addEventListener('click', function(e) {
+        if (e.target === calendarModal) {
+            calendarModal.style.display = 'none';
+        }
+    });
+    
+    // تصفح الأشهر
+    prevMonthBtn.addEventListener('click', function() {
+        currentDate.setMonth(currentDate.getMonth() - 1);
+        renderCalendar(currentDate);
+    });
+    
+    nextMonthBtn.addEventListener('click', function() {
+        currentDate.setMonth(currentDate.getMonth() + 1);
+        renderCalendar(currentDate);
+    });
+    
+    // زر اليوم
+    todayBtn.addEventListener('click', function() {
+        currentDate = new Date();
+        selectedDate = new Date();
+        renderCalendar(currentDate);
+    });
+    
+    // زر التحديد
+    selectBtn.addEventListener('click', function() {
+        if (selectedDate) {
+            const day = selectedDate.getDate();
+            const month = selectedDate.getMonth() + 1;
+            const year = selectedDate.getFullYear();
+            dateInputField.value = `${day} / ${month} / ${year}`;
+        }
+        calendarModal.style.display = 'none';
+    });
+    
+    // عرض التقويم
+    function renderCalendar(date) {
+        const year = date.getFullYear();
+        const month = date.getMonth();
+        
+        // تحديث عنوان الشهر والسنة
+        calendarMonthYear.textContent = `${monthNames[month]} ${year}`;
+        
+        // اليوم الأول من الشهر
+        const firstDay = new Date(year, month, 1);
+        // اليوم الأخير من الشهر
+        const lastDay = new Date(year, month + 1, 0);
+        // عدد الأيام في الشهر
+        const daysInMonth = lastDay.getDate();
+        // يوم الأسبوع لليوم الأول (0 = الأحد)
+        const firstDayIndex = firstDay.getDay();
+        
+        // اليوم الحالي
+        const today = new Date();
+        const isToday = (day) => {
+            return day === today.getDate() && 
+                   month === today.getMonth() && 
+                   year === today.getFullYear();
+        };
+        
+        // مسح التقويم السابق
+        calendarDays.innerHTML = '';
+        
+        // أيام الشهر السابق
+        const prevMonthLastDay = new Date(year, month, 0).getDate();
+        for (let i = firstDayIndex; i > 0; i--) {
+            const day = document.createElement('div');
+            day.className = 'calendar-day other-month';
+            day.textContent = prevMonthLastDay - i + 1;
+            calendarDays.appendChild(day);
+        }
+        
+        // أيام الشهر الحالي
+        for (let i = 1; i <= daysInMonth; i++) {
+            const day = document.createElement('div');
+            day.className = 'calendar-day';
+            day.textContent = i;
+            
+            // تحديد اليوم الحالي
+            if (isToday(i)) {
+                day.classList.add('today');
+            }
+            
+            // تحديد اليوم المحدد
+            if (selectedDate && 
+                i === selectedDate.getDate() && 
+                month === selectedDate.getMonth() && 
+                year === selectedDate.getFullYear()) {
+                day.classList.add('selected');
+            }
+            
+            // إضافة حدث النقر
+            day.addEventListener('click', function() {
+                // إزالة التحديد من جميع الأيام
+                document.querySelectorAll('.calendar-day').forEach(d => {
+                    d.classList.remove('selected');
+                });
+                
+                // تحديد اليوم المختار
+                this.classList.add('selected');
+                selectedDate = new Date(year, month, i);
+            });
+            
+            calendarDays.appendChild(day);
+        }
+        
+        // حساب عدد الخلايا المتبقية
+        const totalCells = 42; // 6 أسطر × 7 أيام
+        const nextMonthDays = totalCells - (firstDayIndex + daysInMonth);
+        
+        // أيام الشهر التالي
+        for (let i = 1; i <= nextMonthDays; i++) {
+            const day = document.createElement('div');
+            day.className = 'calendar-day other-month';
+            day.textContent = i;
+            calendarDays.appendChild(day);
+        }
+    }
+    
+    // تهيئة التقويم
+    renderCalendar(currentDate);
+});
+</script>
+
+</body>
+</html>
